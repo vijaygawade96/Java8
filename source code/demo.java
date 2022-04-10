@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.Scanner;
 
 class Demo {
@@ -5,6 +6,13 @@ class Demo {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Java");
+
+        C02ImmutableClass obj1 = C02ImmutableClass.getC02ImmutableClass("Vijay R. Gawade", new Date(1996, 10, 21));
+        System.out.println("Before: "+obj1);
+        tryModification(obj1.getFullName(), obj1.getDob());
+        System.out.println("After getDob() : "+obj1);
+        tryModification(obj1.getFullName(), obj1.getDob2());
+        System.out.println("After getDob2() : "+obj1);
 
         boolean result = true;
         if (result) {
@@ -41,14 +49,20 @@ class Demo {
             System.out.print("play again (y/n): ");
             input = sc.nextLine();
         } while (input == "y" || input.contains("Y"));
+        sc.close();
 
-        for(int i=0;i<5;i++){
-            System.out.println("i="+i);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("i=" + i);
         }
 
-        int num[]={5,7,56,28};
+        int num[] = { 5, 7, 56, 28 };
         for (int i : num) {
-            System.out.println("num arr="+i);
+            System.out.println("num arr=" + i);
         }
+    }
+
+    private static void tryModification(String fName, Date dob) {
+        fName = "Vijay Ramchandra Gawade";
+        dob.setDate(10);
     }
 }

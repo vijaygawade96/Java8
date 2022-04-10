@@ -1,3 +1,4 @@
 
 *.tmp
 ~$Java8.docx
+.vscode/settings.json
